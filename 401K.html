@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>401K COIN - Retirement Planning for Everyone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 0;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: #e8e8e8;
+            padding: 0 32px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-bottom: 3px solid #999;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 90px;
+            object-fit: fill;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            background: #e8e8e8;
+        }
+
+        .banner-placeholder {
+            background: #fff;
+            border: 2px dashed #999;
+            padding: 25px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(to bottom, #ffffff, #e8e8e8);
+            padding: 20px 0;
+            border-bottom: 3px solid #d32f2f;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d32f2f;
+            text-decoration: none;
+            font-family: Georgia, serif;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contract-container {
+            margin: 18px auto 0 auto;
+            background: #f8f8f8;
+            border: 1.5px solid #d32f2f;
+            border-radius: 8px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            text-align: center;
+            grid-column: 1 / -1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contract-label {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-right: 8px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        .contract-address {
+            color: #ffd600;
+            font-weight: bold;
+            font-family: inherit;
+            font-size: 15px;
+            word-break: break-all;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-btn {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            padding: 3px 8px;
+            transition: background 0.2s, border 0.2s;
+            color: #333;
+        }
+        .copy-btn:hover {
+            background: #d32f2f;
+            color: #fff;
+            border: 1px solid #d32f2f;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 3px;
+            transition: background 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: #d32f2f;
+            color: white;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #e8e8e8;
+            padding: 8px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .breadcrumb-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #666;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Column Styling */
+        .column {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .column h2 {
+            color: #d32f2f;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #d32f2f;
+            font-family: Georgia, serif;
+        }
+
+        .column h3 {
+            color: #333;
+            font-size: 16px;
+            margin: 15px 0 10px 0;
+            font-family: Georgia, serif;
+        }
+
+        .column p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        /* News Article Styling */
+        .news-article {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+        }
+
+        .news-article h4 {
+            color: #d32f2f;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-family: Georgia, serif;
+        }
+
+        .news-article p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .news-date {
+            background: #666;
+            color: white;
+            padding: 2px 6px;
+            font-size: 11px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        /* Calculator Styling */
+        .calculator {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 2px solid #d32f2f;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .calculator h3 {
+            background: #d32f2f;
+            color: white;
+            padding: 10px;
+            margin: -20px -20px 15px -20px;
+            border-radius: 3px 3px 0 0;
+            font-size: 16px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #d32f2f;
+        }
+
+        .calculate-btn {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .calculate-btn:hover {
+            background: #b71c1c;
+        }
+
+        .result {
+            background: #e8f5e8;
+            padding: 15px;
+            border: 2px solid #4caf50;
+            border-radius: 3px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .result h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .result-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1b5e20;
+            font-family: Georgia, serif;
+        }
+
+        /* Sidebar Elements */
+        .sidebar-box {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-box h4 {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+        }
+
+        .sidebar-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar-box li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+        }
+
+        .sidebar-box li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-box a {
+            color: #d32f2f;
+            text-decoration: none;
+        }
+
+        .sidebar-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Middle Banner */
+        .middle-banner {
+            grid-column: 1 / -1;
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #ccc;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        .footer-banner {
+            background: #f0f0f0;
+            border: 2px dashed #999;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            color: #666;
+            border-radius: 3px;
+        }
+
+        .footer p {
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner Area -->
+    <div class="top-banner">
+        <img src="images/INVEST.png" alt="Advertisement" class="banner-image">
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div>
+                <a href="#" class="logo">401K COIN</a>
+                <div class="tagline">Retirement For Everyone</div>
+               
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href=https://x.com/401K_401K>Home</a></li>
+                    <li><a href=https://dexscreener.com>Planning</a></li>
+                    <li><a href=https://paperhands.gm.ai>Calculators</a></li>
+                    <li><a href=https://www.vertigo.sh>News</a></li>
+                    <li><a href=https://www.youtube.com/watch?v=FoYC_8cutb0>Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            Home > Retirement Planning > 401K Coin
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="contract-container">
+            <span class="contract-label">CA:</span>
+            <span class="contract-address" id="contract-address">401k401k401k401k401kvertigo</span>
+            <button class="copy-btn" onclick="copyContractAddress()" title="Copy to clipboard">💰</button>
+        </div>
+        <!-- Left Column - News & Articles -->
+        <div class="column">
+            <h2>Retirement News & Updates</h2>
+            
+            <div class="news-article">
+                <h4>401k Contribution Limits Increase for 2025</h4>
+                <p>The IRS has announced new contribution limits for 401k retirement plans. The standard contribution limit increases to $23,500, with catch-up contributions for those 50 and older remaining at $7,500.</p>
+                <div class="news-date">June 10, 2025</div>
+            </div>
+
+            <div class="news-article">
+                <h4>Planning for Market Volatility in Retirement</h4>
+                <p>Financial experts recommend maintaining a diversified portfolio and staying committed to long-term retirement savings goals, even during periods of market uncertainty.</p>
+                <div class="news-date">May 29, 2025</div>
+            </div>
+
+            <div class="news-article">
+                <h4>Target-Date Funds: A Simple Retirement Solution</h4>
+                <p>Target-date funds offer an easy way to maintain age-appropriate asset allocation without the need for constant portfolio management, making them popular among retirement savers.</p>
+                <div class="news-date">May 17, 2025</div>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href=https://curvo.eu/backtest/en/market-index/bitcoin?currency=eur>Retirement Calculator</a></li>
+                    <li><a href=https://www.pgpf.org/article/lawmakers-are-running-out-of-time-to-fix-social-security/>Social Security Guide</a></li>
+                    <li><a href=https://app.hyperliquid.xyz/trade>Medicare Information</a></li>
+                    <li><a href=https://webuyhousecoins.com>Estate Planning</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Center Column - 401K COIN -->
+        <div class="column">
+            <h2>401K Info and Benefits</h2>
+            
+            
+            
+            <h3>Start your 401k today</h3>
+            <p>401K COIN represents a new approach to retirement planning. This innovative digital asset is designed to help everyone build their retirement savings, regardless of employment status.</p>
+            
+            <h3>Key Benefits</h3>
+            <p>• Accessible to all workers<br>
+            • No employer required<br>
+            • Programmed for 401k% growth<br>
+            • Start with any amount<br>
+            • Built for your future</p>
+
+            <div class="calculator">
+                <h3>401K return Calculator</h3>
+                
+                <div class="input-group">
+                    <label for="coin-investment">Your Investment Amount ($)</label>
+                    <input type="number" id="coin-investment" placeholder="1000" min="0">
+                </div>
+                
+                <button class="calculate-btn" onclick="calculateCoinProfit()">Calculate Returns</button>
+                
+                <div id="coin-result" class="result" style="display: none;">
+                    <h4>Projected Value:</h4>
+                    <div class="result-amount" id="coin-result-amount">$0</div>
+                    <p style="font-size: 12px; margin-top: 10px; color: #666;">Based on 401,000% growth model</p>
+                </div>
+                <p style="font-size:9px; color:#888; margin-top:10px;">
+                *Does not accurately reflect returns nor intended to be used as a real financial planning tool.
+                </p>
+            </div>
+            
+            <h3>Start Building Your Future Today</h3>
+            <p>Hold the asset programmed for 401k% increase over time. 401K COIN makes retirement planning accessible to everyone, not just those with traditional employer-sponsored plans.</p>
+        </div>
+
+        <!-- Right Column - Retirement Tools -->
+        <div class="column">
+            <h2>Retirement Planning Tools</h2>
+            
+            <div class="calculator">
+                <h3>Traditional 401k Savings Calculator</h3>
+                
+                <div class="input-group">
+                    <label for="monthly-contribution">Monthly Contribution ($)</label>
+                    <input type="number" id="monthly-contribution" placeholder="500" min="0">
+                </div>
+                
+                <div class="input-group">
+                    <label for="annual-return">Expected Annual Return (%)</label>
+                    <input type="number" id="annual-return" placeholder="7" min="0" max="20" step="0.1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="years">Years Until Retirement</label>
+                    <input type="number" id="years" placeholder="30" min="1" max="50">
+                </div>
+                
+                <div class="input-group">
+                    <label for="current-savings">Current Savings ($)</label>
+                    <input type="number" id="current-savings" placeholder="10000" min="0">
+                </div>
+                
+                <button class="calculate-btn" onclick="calculateSavings()">Calculate Staying Poor</button>
+                
+                <div id="result" class="result" style="display: none;">
+                    <h4>Your Projected Savings:</h4>
+                    <div class="result-amount" id="result-amount">$0</div>
+                    <p id="result-details" style="font-size: 12px; margin-top: 10px; color: #666;"></p>
+                </div>
+            </div>
+            
+            <h3>30 Years is too LONG TO WAIT</h3>
+            <p>Get started today with 401k and access the beginning of your future toda. </p>            
+            <div class="sidebar-box">
+                <h4>Retirement Resources</h4>
+                <ul>
+                    <li><a href="#">IRA vs 401k Guide</a></li>
+                    <li><a href="#">Catch-up Contributions</a></li>
+                    <li><a href="#">Required Distributions</a></li>
+                    <li><a href="#">Rollover Information</a></li>
+                    <li><a href="#">Tax Strategies</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Planning Tips</h4>
+                <p style="font-size: 13px;">Start saving early to take advantage of compound interest. Even small contributions can grow significantly over time.</p>
+            </div>
+        </div>
+
+        <!-- Middle Banner -->
+        <div class="middle-banner banner-placeholder">
+            Horizontal Advertisement Space - 728x90 Banner
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-banner">
+            Footer Advertisement Space - Partner with 401K COIN
+        </div>
+        
+        <p>© 2025 401K COIN. All rights reserved.</p>
+        <p>Disclaimer: This information is for entertainment purposes only and should not be considered financial advice. Please consult with a qualified financial advisor before making investment decisions.</p>
+        <p>Privacy Policy | Terms of Service | Contact Us</p>
+    </footer>
+
+    <script>
+        function calculateCoinProfit() {
+            const investment = parseFloat(document.getElementById('coin-investment').value) || 0;
+            const coinResult = investment * 4010; // 401,000% = multiply by 4010
+            
+            document.getElementById('coin-result-amount').textContent = 
+                '$' + coinResult.toLocaleString('en-US', {maximumFractionDigits: 0});
+            
+            document.getElementById('coin-result').style.display = 'block';
+        }
+
+        function calculateSavings() {
+            const monthlyContribution = parseFloat(document.getElementById('monthly-contribution').value) || 0;
+            const annualReturn = parseFloat(document.getElementById('annual-return').value) || 7;
+            const years = parseInt(document.getElementById('years').value) || 30;
+            const currentSavings = parseFloat(document.getElementById('current-savings').value) || 0;
+            
+            const monthlyReturn = (annualReturn / 100) / 12;
+            const totalMonths = years * 12;
+            
+            const futureValueCurrent = currentSavings * Math.pow(1 + annualReturn/100, years);
+            const futureValueContributions = monthlyContribution * 
+                ((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn);
+            
+            const totalFutureValue = futureValueCurrent + futureValueContributions;
+            const totalContributed = currentSavings + (monthlyContribution * totalMonths);
+            const totalGrowth = totalFutureValue - totalContributed;
+            
+            document.getElementById('result-amount').textContent = 
+                '$' + totalFutureValue.toLocaleString('en-US', {maximumFractionDigits: 0});
+            
+            document.getElementById('result-details').innerHTML = 
+                `Total contributed: $${totalContributed.toLocaleString('en-US', {maximumFractionDigits: 0})}<br>
+                 Growth from interest: $${totalGrowth.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+            
+            document.getElementById('result').style.display = 'block';
+        }
+        
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => {
+                if (document.getElementById('result').style.display === 'block') {
+                    calculateSavings();
+                }
+                if (document.getElementById('coin-result').style.display === 'block') {
+                    calculateCoinProfit();
+                }
+            });
+        });
+
+        function copyContractAddress() {
+            const address = document.getElementById('contract-address').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✅';
+                setTimeout(() => {
+                    btn.textContent = '📋';
+                }, 1200);
+            });
+        }
+    </script>
+</body>
+</html>
